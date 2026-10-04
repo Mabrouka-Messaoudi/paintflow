@@ -1,92 +1,57 @@
-# Pet Health Data Analysis Project
+# PaintFlow
 
-## Project Overview
-This project analyzes health data of domestic animals (cats and dogs) to identify risk factors associated with various diseases. The study focuses on understanding how physiological and demographic characteristics influence pets' overall health conditions, with applications in veterinary health informatics and predictive analytics.
+Plateforme SaaS de gestion pour peintres professionnels et leurs clients : projets, devis, paiements, factures et chat en temps réel, réunis dans un seul espace.
 
+Le peintre pilote son activité depuis un dashboard. Le client suit son chantier, valide ses devis, voit ce qu'il a payé et ce qu'il reste à payer, et échange avec le peintre sans passer par WhatsApp ou des PDF envoyés par mail.
 
-# Project Structure
-```markdown
-DATA_ANALYSIS/
-|-- analysis/                 # Virtual environment
-|   |-- Include/
-|   |-- Lib/
-|   |-- Scripts/
-|   |-- share/
-|   |-- pyvenv.cfg
-|-- data/                     # Data directory
-|   |-- cleaned_data.xlsx     # Processed dataset
-|-- deployment/               # Deployment files
-|   |-- gbm_model.pkl         # Trained Gradient Boosting Model
-|   |-- scaler.pkl            # Feature scaler object
-|-- app.py                    # Main application file
-|-- requirements.txt          # Project dependencies
-|-- README.md                 # Project documentation
+## Stack
+
+| Couche | Technologie |
+|---|---|
+| Framework | Next.js (App Router) + React + TypeScript |
+| Style | Tailwind CSS + shadcn/ui |
+| Icônes / animations | Lucide React / Motion (`motion/react`) |
+| Formulaires | React Hook Form + Zod |
+| Graphiques | Recharts |
+| Backend | Supabase : PostgreSQL, Auth, Realtime, Storage |
+| Sécurité des données | Row Level Security (RLS) PostgreSQL |
+| Déploiement | Vercel (app) + Supabase (backend) |
+
+## Documentation
+
+| Document | Contenu |
+|---|---|
+| [PROJECT_SPEC.md](./PROJECT_SPEC.md) | Vision, rôles, fonctionnalités, parcours utilisateurs, règles métier |
+| [ARCHITECTURE.md](./ARCHITECTURE.md) | Structure du code, routing, accès aux données, auth, realtime |
+| [DATABASE.md](./DATABASE.md) | Schéma, relations, vues, politiques RLS, stockage |
+| [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) | Couleurs, typographie, espacements, composants, animations, responsive |
+| [ROADMAP.md](./ROADMAP.md) | Les 13 phases (0 à 12) et leurs critères de validation |
+
+## Démarrage local
+
+```bash
+npm install
+cp .env.example .env.local   # renseigner les clés Supabase
+npm run dev                   # http://localhost:3000
 ```
-## Dataset Description
-The dataset contains comprehensive information on domestic animals including:
-- Species and breed
-- Age and weight
-- Vital signs (temperature, respiratory rate, heart rate)
-- Activity level
-- Sleep quality
-- Disease diagnosis
 
-## Research Problem
-**How do the physiological and demographic characteristics of domestic animals influence their health status, and can we identify at-risk profiles for certain diseases?**
+Variables attendues :
 
-## Project Objectives
-1. Identify factors most correlated with various diseases
-2. Determine breed/species predispositions to health conditions
-3. Analyze impact of age and weight on pet health
-4. Visualize complex feature relationships
-5. Build typical profiles for healthy and sick animals
-6. Generate personalized health recommendations
+```
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=    # serveur uniquement, jamais exposée au client
+```
 
-## Installation & Usage
+## Scripts
 
-### Prerequisites
-- Python 3.x
-- pip package manager
+```bash
+npm run dev        # développement
+npm run lint       # ESLint
+npx tsc --noEmit   # vérification TypeScript
+npm run build      # build de production
+```
 
-### Setup Instructions
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/pet-health-analysis.git
-   cd pet-health-analysis
-2. **Set up virtual environment**:
-    ```bash
-    python -m venv analysis
-    # On Windows:
-    analysis\Scripts\activate
-    # On macOS/Linux:
-    source analysis/bin/activate
-4. **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt
-6. **Run the application**:
-    ```bash
-    python app.py
-## Dependencies
-The project utilizes the following Python libraries:
+## Statut
 
-- **pandas** - Data manipulation and analysis  
-- **numpy** - Numerical computations  
-- **matplotlib** - Static data visualizations  
-- **seaborn** - Advanced statistical visualizations  
-- **scikit-learn** - Machine learning and clustering  
-- **missingno** - Missing data visualization  
-- **plotly** - Interactive visualizations  
-- **prince** - Multiple correspondence analysis (for categorical variable reduction)  
-- **streamlit** - Interactive web dashboard (if included)  
-
-## Authors
-
-**Mabrouka Messaoudi**  
-📧 Email: [mabrouka.messaoudi@fss.u-sfax.tn](mailto:mabrouka.messaoudi@fss.u-sfax.tn)  
-
-**Essra Hmida**  
-📧 Email: [hmidaesraa@gmail.com](mailto:hmidaesraa@gmail.com)  
-
-
-
-
+Projet en cours de construction, phase par phase. Voir [ROADMAP.md](./ROADMAP.md).

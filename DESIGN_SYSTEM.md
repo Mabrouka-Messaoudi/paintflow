@@ -132,3 +132,11 @@ Largeurs de test : 1440, 1280, 1024, 768, 430, 390, 375.
 ## 9. Accessibilité
 
 Focus visible sur tout élément interactif (anneau 2 px `accent`), navigation clavier complète, libellés sur toutes les icônes seules, statuts jamais signalés par la couleur seule (toujours un libellé), langue de la page déclarée.
+
+## 10. Notes d'implémentation
+
+- Le terracotta est exposé sous le nom `brand` (`bg-brand`, `text-brand`, `bg-brand-soft`). Le nom `accent` reste celui de shadcn/ui pour les fonds de survol neutres.
+- Texte des badges de statut : tokens `success-strong` (#2E6B47), `warning-strong` (#855810) et `danger-strong` (#9E3029) sur leur fond `*-soft`, pour respecter le contraste AA.
+- Styles typographiques disponibles en classes : `text-display`, `text-h1`, `text-h2`, `text-h3`, `text-lead`, `text-caption`.
+- Ombres : `shadow-card`, `shadow-raised`, `shadow-overlay`.
+- Référence visuelle : `/styleguide` (développement uniquement).
